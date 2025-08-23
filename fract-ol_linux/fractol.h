@@ -6,7 +6,7 @@
 /*   By: zatalbi <zatalbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:00:05 by zatalbi           #+#    #+#             */
-/*   Updated: 2025/08/23 04:53:18 by zatalbi          ###   ########.fr       */
+/*   Updated: 2025/08/23 06:20:18 by zatalbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <math.h>
 # include <X11/X.h>
 # include <X11/Xlib.h>
 # include <X11/keysym.h>

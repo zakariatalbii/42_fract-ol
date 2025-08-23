@@ -6,7 +6,7 @@
 /*   By: zatalbi <zatalbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:00:05 by zatalbi           #+#    #+#             */
-/*   Updated: 2025/08/23 04:36:58 by zatalbi          ###   ########.fr       */
+/*   Updated: 2025/08/23 06:19:43 by zatalbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <math.h>
 # include <Carbon/Carbon.h>
 # include "mlx/mlx.h"
 
