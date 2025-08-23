@@ -15,7 +15,7 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(MLX) $(OBJ)
-	$(CC) $(OBJ) $(MLX) -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(OBJ) $(MLX) -framework OpenGL -framework AppKit -lm -o $(NAME)
 
 $(MLX):
 	make -C mlx

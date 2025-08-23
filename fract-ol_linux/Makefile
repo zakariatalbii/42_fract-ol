@@ -15,7 +15,7 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(MLX) $(OBJ)
-	$(CC) $(OBJ) $(MLX) -lX11 -lXext -o $(NAME)
+	$(CC) $(OBJ) $(MLX) -lX11 -lXext -lm -o $(NAME)
 
 $(MLX):
 	make -C mlx
