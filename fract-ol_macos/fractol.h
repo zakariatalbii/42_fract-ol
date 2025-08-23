@@ -6,7 +6,7 @@
 /*   By: zatalbi <zatalbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:00:05 by zatalbi           #+#    #+#             */
-/*   Updated: 2025/04/16 21:42:34 by zatalbi          ###   ########.fr       */
+/*   Updated: 2025/08/23 04:36:58 by zatalbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <X11/X.h>
-# include <X11/Xlib.h>
-# include <X11/keysym.h>
-# include "minilibx-linux/mlx.h"
+# include <Carbon/Carbon.h>
+# include "mlx/mlx.h"
 
 # define WIDTH 500
 # define HEIGHT 500
+
+typedef struct s_rgb
+{
+	unsigned char	r;
+	unsigned char	g;
+	unsigned char	b;
+}	t_rgb;
 
 typedef struct s_img_data
 {

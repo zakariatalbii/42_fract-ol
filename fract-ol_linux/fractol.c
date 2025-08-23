@@ -6,7 +6,7 @@
 /*   By: zatalbi <zatalbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 07:01:37 by zatalbi           #+#    #+#             */
-/*   Updated: 2025/04/16 21:34:57 by zatalbi          ###   ########.fr       */
+/*   Updated: 2025/08/23 05:34:03 by zatalbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ int	main(int argc, char **argv)
 			ft_iserror();
 		data.z = (t_complex){ft_atof(argv[2]), ft_atof(argv[3])};
 	}
-	if (data.iters < 50)
-		ft_iserror();
 	ft_init(&data, argv[1]);
 	ft_hook(&data);
 	ft_fractol(data);

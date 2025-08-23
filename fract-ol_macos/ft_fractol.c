@@ -6,7 +6,7 @@
 /*   By: zatalbi <zatalbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 22:04:44 by zatalbi           #+#    #+#             */
-/*   Updated: 2025/04/16 18:23:24 by zatalbi          ###   ########.fr       */
+/*   Updated: 2025/08/23 06:06:50 by zatalbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,24 @@ static void	ft_putpix(char *data_addr, int color)
 	}
 	*(int *)(data_addr + offset) = color;
 	offset += sizeof(int);
+}
+
+static int	ft_get_color(t_complex z, int iter, int max_iters)
+{
+	double	modulus;
+	double	smooth_iter;
+	double	t;
+	t_rgb	c;
+
+	modulus = sqrt(z.r * z.r + z.i * z.i);
+	smooth_iter = iter + 1 - log(log(modulus)) / log(2.0);
+	t = smooth_iter / max_iters;
+	if (t >= 1.)
+		return (0);
+	c.r = (unsigned char)(9 * (1 - t) * t * t * t * 255);
+	c.g = (unsigned char)(15 * (1 - t) * (1 - t) * t * t * 255);
+	c.b = (unsigned char)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
+	return (c.r << 16 | c.g << 8 | c.b);
 }
 
 static void	ft_mandelbrot(t_mlx_data data, int x, int y)
@@ -43,9 +61,7 @@ static void	ft_mandelbrot(t_mlx_data data, int x, int y)
 	c.i = ft_remap(y, sr, dr);
 	while ((z.r * z.r) + (z.i * z.i) < 4 && ++v < data.iters)
 		z = (t_complex){(z.r * z.r) - (z.i * z.i) + c.r, (2 * z.r * z.i) + c.i};
-	sr = (t_range){1, data.iters};
-	dr = (t_range){0x000000, 0xffffff};
-	ft_putpix(data.img.data_addr, ft_remap(v, sr, dr));
+	ft_putpix(data.img.data_addr, ft_get_color(z, v, data.iters));
 }
 
 static void	ft_julia(t_mlx_data data, int x, int y, t_complex	c)
@@ -64,9 +80,7 @@ static void	ft_julia(t_mlx_data data, int x, int y, t_complex	c)
 	z.i = ft_remap(y, sr, dr);
 	while ((z.r * z.r) + (z.i * z.i) < 4 && ++v < data.iters)
 		z = (t_complex){(z.r * z.r) - (z.i * z.i) + c.r, (2 * z.r * z.i) + c.i};
-	sr = (t_range){0, data.iters};
-	dr = (t_range){0x000000, 0xffffff};
-	ft_putpix(data.img.data_addr, ft_remap(v, sr, dr));
+	ft_putpix(data.img.data_addr, ft_get_color(z, v, data.iters));
 }
 
 void	ft_fractol(t_mlx_data data)
