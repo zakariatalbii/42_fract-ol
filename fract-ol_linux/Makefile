@@ -1,5 +1,5 @@
-MLX = mlx/libmlx.a
-MLX_H = mlx/mlx.h
+MLX = mlx/lib/libmlx.a
+MLX_H = mlx/include/mlx.h
 
 SRC = fractol.c ft_fractol.c ft_init.c ft_hook.c tools.c
 OBJ = $(SRC:.c=.o)
@@ -15,13 +15,9 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(MLX) $(OBJ)
-	$(CC) $(OBJ) $(MLX) -lX11 -lXext -lm -o $(NAME)
-
-$(MLX):
-	make -C mlx
+	$(CC) $(OBJ) $(MLX) -lXext -lX11 -lm -o $(NAME)
 
 clean:
-	make -C mlx clean
 	$(RM) $(OBJ)
 
 fclean: clean
