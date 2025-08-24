@@ -19,7 +19,7 @@
 # include <X11/X.h>
 # include <X11/Xlib.h>
 # include <X11/keysym.h>
-# include "mlx/mlx.h"
+# include "mlx/include/mlx.h"
 
 # define WIDTH 500
 # define HEIGHT 500
