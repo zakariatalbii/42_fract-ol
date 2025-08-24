@@ -6,7 +6,7 @@
 /*   By: zatalbi <zatalbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:00:05 by zatalbi           #+#    #+#             */
-/*   Updated: 2025/08/23 06:19:43 by zatalbi          ###   ########.fr       */
+/*   Updated: 2025/08/24 19:48:08 by zatalbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <math.h>
 # include <Carbon/Carbon.h>
-# include "mlx/mlx.h"
+# include "mlx/include/mlx.h"
 
 # define WIDTH 500
 # define HEIGHT 500
