@@ -6,7 +6,7 @@
 /*   By: zatalbi <zatalbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 07:01:37 by zatalbi           #+#    #+#             */
-/*   Updated: 2025/08/23 05:34:03 by zatalbi          ###   ########.fr       */
+/*   Updated: 2026/01/30 13:26:42 by zatalbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,5 @@ int	main(int argc, char **argv)
 	ft_hook(&data);
 	ft_fractol(data);
 	mlx_loop(data.mlx_ptr);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: zatalbi <zatalbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:00:05 by zatalbi           #+#    #+#             */
-/*   Updated: 2025/08/23 06:20:18 by zatalbi          ###   ########.fr       */
+/*   Updated: 2026/01/30 18:13:08 by zatalbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,40 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <math.h>
-# include <X11/X.h>
-# include <X11/Xlib.h>
-# include <X11/keysym.h>
-# include "mlx/include/mlx.h"
+
+# ifndef X11
+#  define X11 11
+# endif
+
+# if X11
+#  include <X11/X.h>
+#  include <X11/Xlib.h>
+#  include <X11/keysym.h>
+# else
+#  include <Carbon/Carbon.h>
+# endif
+
+# include "mlx.h"
+
+# if X11
+#  define K_ESC XK_Escape
+#  define K_UP XK_Up
+#  define K_DOWN XK_Down
+#  define K_RIGHT XK_Right
+#  define K_LEFT XK_Left
+#  define K_P XK_p
+#  define K_M XK_m
+# else
+#  define K_ESC kVK_Escape
+#  define K_UP kVK_UpArrow
+#  define K_DOWN kVK_DownArrow
+#  define K_RIGHT kVK_RightArrow
+#  define K_LEFT kVK_LeftArrow
+#  define K_P kVK_ANSI_P
+#  define K_M kVK_ANSI_M
+#  define Button4 4
+#  define Button5 5
+# endif
 
 # define WIDTH 500
 # define HEIGHT 500
